@@ -5,7 +5,7 @@ git init
 git add .
 
 #Añade un momentario y prepara la subida con:
-git commit -m "Subida de proyecto"
+git commit -m "Subida de proyecto vintol"
 
 #cambiar al branch main
 git branch -M main

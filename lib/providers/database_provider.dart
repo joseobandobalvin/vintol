@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:vintol/models/product.dart';
-import 'package:vintol/screens/settings/settings_screen.dart';
 import 'package:vintol/widgets/dialogs.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:path/path.dart';

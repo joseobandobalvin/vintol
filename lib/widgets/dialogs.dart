@@ -1,7 +1,6 @@
 import 'package:vintol/configs/themes/app_colors.dart';
 import 'package:vintol/generated/l10n.dart';
 import 'package:vintol/models/product.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
