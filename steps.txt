@@ -1,0 +1,19 @@
+#Subir código por línea de comandos
+
+git init
+
+git add .
+
+#Añade un momentario y prepara la subida con:
+git commit -m "Subida de proyecto"
+
+#cambiar al branch main
+git branch -M main
+
+#Indica el repositorio Github
+git remote add origin https://github.com/joseobandobalvin/vintol.git
+
+#Finalmente, sube el proyecto a la ubicación específica:
+git push origin main
+
+#Como resultado, tu código ya está subido en GitHub.
