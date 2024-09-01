@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//impoooort 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'generated/l10n.dart';
 import 'bindings/initial_bindings.dart';
 
