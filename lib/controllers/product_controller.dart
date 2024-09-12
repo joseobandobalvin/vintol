@@ -1,5 +1,5 @@
 import 'package:vintol/generated/l10n.dart';
-import 'package:vintol/providers/database_provider.dart';
+import 'package:vintol/providers/local/database_provider.dart';
 import 'package:get/get.dart';
 import 'package:vintol/models/product.dart';
 

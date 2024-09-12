@@ -1,7 +1,7 @@
 import 'package:vintol/configs/themes/app_colors.dart';
 import 'package:vintol/generated/l10n.dart';
-import 'package:vintol/providers/database_provider.dart';
-import 'package:vintol/screens/home/menu_drawer.dart';
+import 'package:vintol/providers/local/database_provider.dart';
+import 'package:vintol/widgets/menu_drawer.dart';
 import 'package:vintol/widgets/dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

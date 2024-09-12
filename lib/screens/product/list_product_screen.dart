@@ -1,8 +1,8 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vintol/generated/l10n.dart';
 import 'package:vintol/models/product.dart';
-import 'package:vintol/providers/database_provider.dart';
-import 'package:vintol/screens/home/menu_drawer.dart';
+import 'package:vintol/providers/local/database_provider.dart';
+import 'package:vintol/widgets/menu_drawer.dart';
 
 import 'package:vintol/screens/home/widgets/card_stack.dart';
 import 'package:flutter/material.dart';

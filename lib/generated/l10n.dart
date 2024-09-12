@@ -60,11 +60,21 @@ class S {
     );
   }
 
-  /// `Products scanner`
-  String get txtHome {
+  /// `Tools`
+  String get txHome {
     return Intl.message(
-      'Products scanner',
-      name: 'txtHome',
+      'Tools',
+      name: 'txHome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bluetooth`
+  String get txBle {
+    return Intl.message(
+      'Bluetooth',
+      name: 'txBle',
       desc: '',
       args: [],
     );

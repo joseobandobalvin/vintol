@@ -1,3 +1,4 @@
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:vintol/configs/themes/app_colors.dart';
 import 'package:vintol/generated/l10n.dart';
 import 'package:vintol/models/product.dart';
@@ -5,27 +6,139 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 abstract class Dialogs {
-  static Future<void> info(BuildContext context,
-      {String? title,
-      String? content,
-      String? btnText,
-      bool dismissible = true}) {
+  static Future<void> info(
+    BuildContext context,
+    ScanResult data, {
+    String? btnText,
+    bool dismissible = true,
+  }) {
     return showDialog(
       context: context,
       barrierDismissible: dismissible,
       builder: (_) => AlertDialog(
-        title: title != null
-            ? Text(
-                title,
-                textAlign: TextAlign.justify,
-              )
-            : null,
-        content: content != null
-            ? Text(
-                content,
-                textAlign: TextAlign.justify,
-              )
-            : null,
+        // margen de alert dialog
+        insetPadding: const EdgeInsets.symmetric(horizontal: 18),
+        shape: const BeveledRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(2),
+            bottom: Radius.circular(4),
+          ),
+        ),
+        title: Center(
+          child: data.advertisementData.advName.isNotEmpty
+              ? Text(
+                  data.advertisementData.advName,
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                )
+              : const Text(
+                  "Dispositivo desconocido",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+        ),
+        content: Column(
+          //Elimina espacio extra dentro del contenido
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Expanded(
+                  flex: 2,
+                  child: Text(
+                    "MAC :",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 8,
+                  child: Text(
+                    data.device.remoteId.toString(),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 2),
+            Row(
+              children: [
+                const Expanded(
+                  child: Text(
+                    "TxPowerLevel :",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    data.advertisementData.txPowerLevel.toString(),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 2),
+            Row(
+              children: [
+                const Expanded(
+                  child: Text(
+                    "Conectable :",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  // child: Text(
+                  //   data.advertisementData.connectable.toString(),
+                  //   textAlign: TextAlign.end,
+                  // ),
+                  child: data.advertisementData.connectable
+                      ? Container(
+                          alignment: Alignment.centerRight,
+                          child: const Icon(
+                            size: 20.0,
+                            Icons.check_circle_outline,
+                            color: Colors.green,
+                          ),
+                        )
+                      : Container(
+                          alignment: Alignment.centerRight,
+                          child: const Icon(
+                            size: 20.0,
+                            Icons.cancel_outlined,
+                            color: Colors.grey,
+                          ),
+                        ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 2),
+            const Text(
+              "Datos del fabricante :",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Text(
+              data.advertisementData.manufacturerData.toString(),
+              textAlign: TextAlign.justify,
+            ),
+          ],
+        ),
         actions: [
           TextButton(
             child: btnText != null ? Text(btnText) : Text(S.current.txClose),
@@ -313,6 +426,37 @@ class SnackBars {
       behavior: SnackBarBehavior.floating,
       content: Text(
         error.toString(),
+        textAlign: TextAlign.justify,
+      ),
+      dismissDirection: DismissDirection.horizontal,
+      duration: const Duration(
+        seconds: 4,
+      ),
+      margin: const EdgeInsets.symmetric(
+        vertical: 10.0,
+        horizontal: 10.0,
+      ),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  static void info(
+    BuildContext context, {
+    String? info,
+    bool? hasAction = false,
+  }) {
+    final snackBar = SnackBar(
+      action: hasAction == true
+          ? SnackBarAction(
+              label: 'Deshacer',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            )
+          : null,
+      behavior: SnackBarBehavior.floating,
+      content: Text(
+        info!,
         textAlign: TextAlign.justify,
       ),
       dismissDirection: DismissDirection.horizontal,

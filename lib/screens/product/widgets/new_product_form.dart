@@ -35,13 +35,7 @@ class NewProductForm extends GetView<ProductController> {
       // ignore: use_build_context_synchronously
       Navigator.pop(context);
       if (submitOk < 1) {
-        Dialogs.info(
-          // ignore: use_build_context_synchronously
-          context,
-          title: S.current.txError,
-          content: S.current.txErrorDescription,
-          btnText: S.current.txtOk,
-        );
+        ////
       } else {
         // go to home
         controller.navigateToHomePage();

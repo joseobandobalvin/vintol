@@ -1,6 +1,8 @@
+import 'package:vintol/controllers/ble_controller.dart';
 import 'package:vintol/controllers/home_controller.dart';
 import 'package:vintol/controllers/product_controller.dart';
 import 'package:vintol/controllers/settings_controller.dart';
+import 'package:vintol/screens/ble/ble_screen.dart';
 import 'package:vintol/screens/detail/detail_product_screen.dart';
 import 'package:vintol/screens/home/home_screen.dart';
 import 'package:vintol/screens/product/edit_new_product_screen.dart';
@@ -11,9 +13,10 @@ import 'package:vintol/screens/settings/settings_screen.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
-  static const String splashPage = "/splash";
-  static const String homePage = "/";
+  static const String homeScreen = "/";
   static const String loginPage = "/login";
+
+  static const String bleScreen = "/ble-screen";
 
   static const String cardDetailPage = "/card-detail";
   static const String organizationFilterPage = "/organization-filter";
@@ -26,15 +29,8 @@ class AppRoutes {
   static const String settings = "/settings";
 
   static List<GetPage> routes() => [
-        // GetPage(
-        //   name: splashPage,
-        //   page: () => const SplashScreen(),
-        //   binding: BindingsBuilder(() {
-        //     Get.put(SplashController());
-        //   }),
-        // ),
         GetPage(
-          name: homePage,
+          name: homeScreen,
           page: () => const HomeScreen(),
           binding: BindingsBuilder(() {
             //Get.put(AuthController());
@@ -42,14 +38,13 @@ class AppRoutes {
             //Get.put(MyZoomDrawerController());
           }),
         ),
-        // GetPage(
-        //   name: loginPage,
-        //   page: () => const LoginScreen(),
-        //   binding: BindingsBuilder(() {
-        //     Get.put(AuthController());
-        //     Get.put(MyZoomDrawerController());
-        //   }),
-        // ),
+        GetPage(
+          name: bleScreen,
+          page: () => const BleScreen(),
+          binding: BindingsBuilder(() {
+            Get.put(BleController());
+          }),
+        ),
         GetPage(
           name: product,
           page: () => const ListProductScreen(),

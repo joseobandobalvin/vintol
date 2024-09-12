@@ -1,6 +1,6 @@
 import 'package:vintol/models/product.dart';
-import 'package:vintol/providers/database_provider.dart';
-import 'package:vintol/screens/home/menu_drawer.dart';
+import 'package:vintol/providers/local/database_provider.dart';
+import 'package:vintol/widgets/menu_drawer.dart';
 import 'package:vintol/screens/home/widgets/card_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -78,18 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             backgroundColor: kDarkBlue,
 
-            actions: <Widget>[
-              IconButton(
-                onPressed: () async {
-                  Get.offAllNamed("/product");
-                  // var data = await DatabaseProvider.db.getDataExample();
-                  // Get.toNamed("/detail-product", arguments: data);
-                },
-                icon: const Icon(Icons.shopping_cart, color: Colors.white),
-              )
-            ],
             title: Text(
-              S.current.txtHome,
+              S.current.txHome,
               style: const TextStyle(color: Colors.white),
             ),
             //pinned: false,
@@ -98,76 +88,46 @@ class _HomeScreenState extends State<HomeScreen> {
             //expandedHeight: 60.0,
             elevation: 10.0,
           ),
-          SlidableAutoCloseBehavior(
-            child: FutureBuilder(
-              future: products,
-              builder: (context, snapshot) {
-                var childCount = 0;
-                if (snapshot.connectionState == ConnectionState.done &&
-                    snapshot.data != null) {
-                  childCount = snapshot.data!.length;
+          FutureBuilder(
+            future: products,
+            builder: (context, snapshot) {
+              var childCount = 0;
+              if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.data != null) {
+                childCount = snapshot.data!.length;
 
-                  return SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (BuildContext context, int index) {
-                        return CardStack(snapshot.data![index]);
-                      },
-                      childCount: childCount,
-                    ),
-                  );
-                }
-
-                return const SliverToBoxAdapter(
-                  child: Center(
-                    child: LinearProgressIndicator(
-                      backgroundColor: Colors.white,
-                      color: Colors.black45,
-                      minHeight: 2,
-                    ),
+                return SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                      return CardStack(snapshot.data![index]);
+                    },
+                    childCount: childCount,
                   ),
                 );
-              },
-            ),
+              }
+
+              return const SliverToBoxAdapter(
+                child: Center(
+                  child: LinearProgressIndicator(
+                    backgroundColor: Colors.white,
+                    color: Colors.black45,
+                    minHeight: 2,
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),
     );
   }
 
-  Future<void> _scanBarcodeStream() async {
-    Product product;
-    List<Product> barcodeList = [];
-    List<Product> tempBarcodeList = [];
-
-    FlutterBarcodeScanner.getBarcodeStreamReceiver(
-            "#ff6666", "Cancelar", true, ScanMode.DEFAULT)!
-        .listen((barcode) async {
-      // barcode to be used
-
-      if (barcode == "-1") {
-        barcode = null;
-
-        if (barcodeList.isNotEmpty) {
-          tempBarcodeList.assignAll(barcodeList);
-          barcodeList.clear();
-          _navigateToDetail(tempBarcodeList);
-        }
-      } else {
-        product = await DatabaseProvider.db.getByBarcode(barcode);
-        barcodeList.add(product);
-        _soundBeep();
-      }
-    });
-  }
+  void _scanBarcodeStream() {}
 
   void _navigateToDetail(List<Product> barcodeLista) {
     Get.toNamed(
       "/detail-product",
       arguments: barcodeLista,
     );
-  }
-
-  void _soundBeep() async {
-    await player.play(AssetSource('media/beeponetone.mp3'));
   }
 }

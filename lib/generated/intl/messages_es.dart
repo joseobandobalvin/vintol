@@ -42,11 +42,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageHomeWelcomeGender": m1,
         "pageHomeWelcomeRole": m2,
         "pageNotificationsCount": m3,
+        "txBle": MessageLookupByLibrary.simpleMessage("Bluetooth"),
         "txClose": MessageLookupByLibrary.simpleMessage("Cerrar"),
         "txDescription": MessageLookupByLibrary.simpleMessage("Descripción"),
         "txError": MessageLookupByLibrary.simpleMessage("Error"),
         "txErrorDescription": MessageLookupByLibrary.simpleMessage(
             "No se pudo guardar el registro"),
+        "txHome": MessageLookupByLibrary.simpleMessage("Herramientas"),
         "txName": MessageLookupByLibrary.simpleMessage("Nombre"),
         "txPrice": MessageLookupByLibrary.simpleMessage("Precio"),
         "txQuantity": MessageLookupByLibrary.simpleMessage("Cantidad"),
@@ -76,7 +78,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "txtDetail": MessageLookupByLibrary.simpleMessage("Detalle"),
         "txtEdit": MessageLookupByLibrary.simpleMessage("Editar"),
         "txtFilterBy": MessageLookupByLibrary.simpleMessage("Filtrar por :"),
-        "txtHome": MessageLookupByLibrary.simpleMessage("Escaner de productos"),
         "txtListOfJudgments":
             MessageLookupByLibrary.simpleMessage("Relacion de sentencias"),
         "txtNew": MessageLookupByLibrary.simpleMessage("Nuevo"),

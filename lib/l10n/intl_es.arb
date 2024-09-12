@@ -1,6 +1,8 @@
 {
     "baseUrl":"https://full.facturalo.pro",
-    "txtHome":"Escaner de productos",
+    
+    "txHome":"Herramientas",
+    "txBle":"Bluetooth",
     "txtBasicInformation":"Información básica",
     "txtWorkExperience":"Experiencia laboral",
     "txtAcademicFormation":"Formación académica",
