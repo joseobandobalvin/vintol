@@ -1,16 +1,15 @@
+import 'package:vintol/models/infraction.dart';
 import 'package:vintol/models/product.dart';
 import 'package:vintol/providers/local/database_provider.dart';
+import 'package:vintol/screens/home/widgets/search_form.dart';
 import 'package:vintol/widgets/menu_drawer.dart';
 import 'package:vintol/screens/home/widgets/card_stack.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:vintol/configs/themes/app_colors.dart';
 
 import 'package:vintol/generated/l10n.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 
 import 'package:get/get.dart';
-import 'package:audioplayers/audioplayers.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,51 +19,40 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  //var users = Get.arguments; ,,,
-  Future<List<Product>>? products;
-
-  // getProducts() async {
-  //   p = await DatabaseProvider.db.getProducts();
-  //   return p;
-  // }
-
-  late AudioPlayer player = AudioPlayer();
+  Future<List<Infraction>>? infractions;
 
   @override
   void initState() {
     super.initState();
 
-    // Create the audio player
-    player = AudioPlayer();
-
-    // Set the release mode to keep the source after playback has completed.
-    player.setReleaseMode(ReleaseMode.stop);
-
-    // Listar productos de la BD
-    products = DatabaseProvider.db.getProducts();
-    // products = DatabaseProvider.db.getDataExample();
+    // Listar infracciones de la BD
+    //infractions = DatabaseProvider.db.getInfractions();
+    infractions = DatabaseProvider.db.getDataExample();
   }
 
   @override
   void dispose() {
-    // Release all sources and dispose the player.
-    player.dispose();
-
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: kLightBlue,
-      floatingActionButton: FloatingActionButton(
-        onPressed: _scanBarcodeStream,
-        child: const Icon(Icons.qr_code_scanner),
-      ),
       drawer: const MenuDrawer(),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            actions: <Widget>[
+              IconButton(
+                onPressed: () async {
+                  await showSearch(
+                    context: context,
+                    delegate: CustomSearchDelegate(),
+                  );
+                },
+                icon: const Icon(Icons.search, color: Colors.white),
+              )
+            ],
             leading: Builder(
               builder: (context) {
                 return IconButton(
@@ -89,9 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
             elevation: 10.0,
           ),
           FutureBuilder(
-            future: products,
+            future: infractions,
             builder: (context, snapshot) {
               var childCount = 0;
+
               if (snapshot.connectionState == ConnectionState.done &&
                   snapshot.data != null) {
                 childCount = snapshot.data!.length;
@@ -119,15 +108,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-    );
-  }
-
-  void _scanBarcodeStream() {}
-
-  void _navigateToDetail(List<Product> barcodeLista) {
-    Get.toNamed(
-      "/detail-product",
-      arguments: barcodeLista,
     );
   }
 }

@@ -1,0 +1,58 @@
+BluetoothService{
+  remoteId: 64: 07: F6: 7B: 08: 8B,
+  serviceUuid: ade3d529-c784-4f63-a987-eb69f70ee816,
+  isPrimary: true,
+  characteristics: [
+    BluetoothCharacteristic{
+      remoteId: 64: 07: F6: 7B: 08: 8B,
+      serviceUuid: ade3d529-c784-4f63-a987-eb69f70ee816,
+      secondaryServiceUuid: null,
+      characteristicUuid: e9241982-4580-42c4-8831-95048216b256,
+      descriptors: [
+        
+      ],
+      properties: CharacteristicProperties{
+        broadcast: false,
+        read: false,
+        writeWithoutResponse: false,
+        write: false,
+        notify: false,
+        indicate: false,
+        authenticatedSignedWrites: false,
+        extendedProperties: false,
+        notifyEncryptionRequired: false,
+        indicateEncryptionRequired: false
+      },
+      value: [
+        
+      ]
+    },
+    BluetoothCharacteristic{
+      remoteId: 64: 07: F6: 7B: 08: 8B,
+      serviceUuid: ade3d529-c784-4f63-a987-eb69f70ee816,
+      secondaryServiceUuid: null,
+      characteristicUuid: ad7b334f-4637-4b86-90b6-9d787f03d218,
+      descriptors: [
+        
+      ],
+      properties: CharacteristicProperties{
+        broadcast: false,
+        read: false,
+        writeWithoutResponse: false,
+        write: false,
+        notify: false,
+        indicate: false,
+        authenticatedSignedWrites: false,
+        extendedProperties: false,
+        notifyEncryptionRequired: false,
+        indicateEncryptionRequired: false
+      },
+      value: [
+        
+      ]
+    }
+  ],
+  includedServices: [
+    
+  ]
+}

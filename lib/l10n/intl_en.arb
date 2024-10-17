@@ -1,17 +1,12 @@
 {
     "baseUrl":"https://full.facturalo.pro",
 
-    "txHome":"Tools",
+    "txHome":"Infractions",
     "txBle":"Bluetooth",
-    "txtBasicInformation":"Basic Informatión",
-    "txtWorkExperience":"Work Experience",
-    "txtAcademicFormation":"Academic Formation",
-    "txtPartialPosition":"Partial Position",
-    "txtSwornDeclaration":"Sworn Declaration",
-    "txtListOfJudgments":"List Of Judgments",
-    "txtAditionalInformation":"Aditional Information",
+    "txElec":"Electricity",
+    
     "txtAskDeleteAction":"Are you sure you want to delete a record ?",
-    "txtDefaulProductName":"Generic Product",
+    
     "txtDefaultTitle":"Default Title",
     "txtDefaultDescription":"Default Description",
     
@@ -27,11 +22,7 @@
     "txtOk" : "OK",
     "txtSave": "Save",
 
-    "txtProducts": "Products",
-    "txDescription":"Description",
-    "txName":"Name",
-    "txPrice":"Price",
-    "txQuantity":"Quantity",
+   
 
     "txtSettings": "Settings",
     "txtSignIn": "Sign in",

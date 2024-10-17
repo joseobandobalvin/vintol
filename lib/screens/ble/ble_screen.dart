@@ -2,11 +2,10 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:get/get.dart';
-import 'package:path/path.dart';
-
-import 'package:vintol/generated/l10n.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'package:vintol/configs/themes/app_colors.dart';
 
@@ -26,17 +25,18 @@ class BleScreen extends StatefulWidget {
 class _BleScreenState extends State<BleScreen> {
   //final Cv cv = Get.arguments;
   //late Future<List<String>> res;
-  final BleController _bleController = BleController();
+  late BleController _bleController;
+  late bool bluetoothIsOn = false;
 
   //BluetoothAdapterState _adapterState = BluetoothAdapterState.unknown;
   //late StreamSubscription<BluetoothAdapterState> _adapterStateStateSubscription;
 
   @override
   void initState() {
-    //res = _bleController.getString("");
     _turnOnBluetooth();
-
     super.initState();
+
+    _bleController = BleController();
 
     // _adapterStateStateSubscription =
     //     FlutterBluePlus.adapterState.listen((state) {
@@ -50,6 +50,8 @@ class _BleScreenState extends State<BleScreen> {
   @override
   void dispose() {
     //_adapterStateStateSubscription.cancel();
+    //_bleController.dispose();
+
     super.dispose();
   }
 
@@ -111,6 +113,27 @@ class _BleScreenState extends State<BleScreen> {
             floating: true,
             //pinned: true,
           ),
+          SliverToBoxAdapter(
+            child: SwitchListTile(
+              activeColor: kDarkBlue,
+              value: bluetoothIsOn,
+              visualDensity: VisualDensity.compact,
+              dense: true,
+              title: const Text("Bluetooth"),
+              onChanged: (val) {
+                setState(() {
+                  bluetoothIsOn = val;
+                });
+              },
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              color: Colors.black12,
+              width: double.infinity,
+              child: const Text("Dispositivos visibles"),
+            ),
+          ),
           SliverFillRemaining(
             child: StreamBuilder<List<ScanResult>>(
               stream: _bleController.scanResults,
@@ -121,24 +144,8 @@ class _BleScreenState extends State<BleScreen> {
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
                       final data = snapshot.data![index];
-                      return GestureDetector(
-                        onLongPress: () {
-                          Dialogs.info(
-                            context,
-                            data,
-                            btnText: "Cerrar",
-                          );
-                        },
-                        onDoubleTap: () {
-                          _bleController.connecting(context, data.device);
-                        },
-                        onHorizontalDragDown: (gg) {
-                          print("canceling");
-                          print(gg);
-                          _bleController.disconnectDevice(data.device);
-                        },
-                        child: CardBluetoothLowEnergy(data),
-                      );
+
+                      return CardBluetoothLowEnergy(data);
                     },
                   );
                 } else {
@@ -246,17 +253,24 @@ class _BleScreenState extends State<BleScreen> {
     //   ),
     // );
   }
-}
 
-_turnOnBluetooth() async {
-  print("starting...");
+  _turnOnBluetooth() async {
+    print("_turnOnBluetooth...");
 
-  // if (await FlutterBluePlus.isSupported == false) {
-  //   print("Bluetooth not supported by this device");
-  //   return;
-  // }
+    // if (await FlutterBluePlus.isSupported == false) {
+    //   print("Bluetooth not supported by this device");
+    //   return;
+    // }
 
-  if (Platform.isAndroid) {
-    await FlutterBluePlus.turnOn();
+    if (await Permission.bluetoothScan.request().isGranted) {
+      setState(() {
+        bluetoothIsOn = true;
+      });
+      print("is granted ble");
+    }
+
+    if (Platform.isAndroid) {
+      await FlutterBluePlus.turnOn();
+    }
   }
 }

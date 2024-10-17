@@ -60,10 +60,10 @@ class S {
     );
   }
 
-  /// `Tools`
+  /// `Infractions`
   String get txHome {
     return Intl.message(
-      'Tools',
+      'Infractions',
       name: 'txHome',
       desc: '',
       args: [],
@@ -80,71 +80,11 @@ class S {
     );
   }
 
-  /// `Basic Informatión`
-  String get txtBasicInformation {
+  /// `Electricity`
+  String get txElec {
     return Intl.message(
-      'Basic Informatión',
-      name: 'txtBasicInformation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Work Experience`
-  String get txtWorkExperience {
-    return Intl.message(
-      'Work Experience',
-      name: 'txtWorkExperience',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Academic Formation`
-  String get txtAcademicFormation {
-    return Intl.message(
-      'Academic Formation',
-      name: 'txtAcademicFormation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Partial Position`
-  String get txtPartialPosition {
-    return Intl.message(
-      'Partial Position',
-      name: 'txtPartialPosition',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sworn Declaration`
-  String get txtSwornDeclaration {
-    return Intl.message(
-      'Sworn Declaration',
-      name: 'txtSwornDeclaration',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `List Of Judgments`
-  String get txtListOfJudgments {
-    return Intl.message(
-      'List Of Judgments',
-      name: 'txtListOfJudgments',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Aditional Information`
-  String get txtAditionalInformation {
-    return Intl.message(
-      'Aditional Information',
-      name: 'txtAditionalInformation',
+      'Electricity',
+      name: 'txElec',
       desc: '',
       args: [],
     );
@@ -155,16 +95,6 @@ class S {
     return Intl.message(
       'Are you sure you want to delete a record ?',
       name: 'txtAskDeleteAction',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Generic Product`
-  String get txtDefaulProductName {
-    return Intl.message(
-      'Generic Product',
-      name: 'txtDefaulProductName',
       desc: '',
       args: [],
     );
@@ -295,56 +225,6 @@ class S {
     return Intl.message(
       'Save',
       name: 'txtSave',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Products`
-  String get txtProducts {
-    return Intl.message(
-      'Products',
-      name: 'txtProducts',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Description`
-  String get txDescription {
-    return Intl.message(
-      'Description',
-      name: 'txDescription',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Name`
-  String get txName {
-    return Intl.message(
-      'Name',
-      name: 'txName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Price`
-  String get txPrice {
-    return Intl.message(
-      'Price',
-      name: 'txPrice',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Quantity`
-  String get txQuantity {
-    return Intl.message(
-      'Quantity',
-      name: 'txQuantity',
       desc: '',
       args: [],
     );

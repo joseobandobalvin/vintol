@@ -1,30 +1,27 @@
 import 'package:vintol/controllers/ble_controller.dart';
+import 'package:vintol/controllers/electricity_controller.dart';
 import 'package:vintol/controllers/home_controller.dart';
-import 'package:vintol/controllers/product_controller.dart';
+import 'package:vintol/controllers/infraction_controller.dart';
 import 'package:vintol/controllers/settings_controller.dart';
+import 'package:vintol/screens/ble/ble_detail.dart';
+import 'package:vintol/screens/ble/ble_scan.dart';
 import 'package:vintol/screens/ble/ble_screen.dart';
-import 'package:vintol/screens/detail/detail_product_screen.dart';
+import 'package:vintol/screens/electricity/electricity_screen.dart';
+import 'package:vintol/screens/home/home_detail_screen.dart';
 import 'package:vintol/screens/home/home_screen.dart';
-import 'package:vintol/screens/product/edit_new_product_screen.dart';
-import 'package:vintol/screens/product/list_product_screen.dart';
-import 'package:vintol/screens/product/search_product_screen.dart';
 import 'package:vintol/screens/settings/settings_screen.dart';
 
 import 'package:get/get.dart';
 
 class AppRoutes {
   static const String homeScreen = "/";
-  static const String loginPage = "/login";
+  static const String homeDetail = "/home-detail";
 
   static const String bleScreen = "/ble-screen";
+  static const String bleScan = "/ble-scan";
+  static const String bleDetail = "/ble-detail";
 
-  static const String cardDetailPage = "/card-detail";
-  static const String organizationFilterPage = "/organization-filter";
-
-  static const String product = "/product";
-  static const String searchProduct = "/search-product";
-  static const String newProduct = "/new-product";
-  static const String detailProduct = "/detail-product";
+  static const String electricityScreen = "/electricity-screen";
 
   static const String settings = "/settings";
 
@@ -39,6 +36,14 @@ class AppRoutes {
           }),
         ),
         GetPage(
+          name: homeDetail,
+          page: () => HomeDetailScreen(),
+          binding: BindingsBuilder(() {
+            Get.put(InfractionController());
+          }),
+        ),
+        //Ble screen *************************************************
+        GetPage(
           name: bleScreen,
           page: () => const BleScreen(),
           binding: BindingsBuilder(() {
@@ -46,26 +51,28 @@ class AppRoutes {
           }),
         ),
         GetPage(
-          name: product,
-          page: () => const ListProductScreen(),
+          name: bleScan,
+          page: () => const BleScan(),
           binding: BindingsBuilder(() {
-            //Get.put(ProductController());
+            //Get.put(BleController());
           }),
         ),
         GetPage(
-          name: newProduct,
-          page: () => EditNewProductScreen(),
+          name: bleDetail,
+          page: () => const BleDetail(),
           binding: BindingsBuilder(() {
-            Get.put(ProductController());
+            Get.put(BleController());
           }),
         ),
+        //Electricity screen *****************************************
         GetPage(
-          name: detailProduct,
-          page: () => DetailProductScreen(),
+          name: electricityScreen,
+          page: () => const ElectricityScreen(),
           binding: BindingsBuilder(() {
-            Get.put(ProductController());
+            Get.put(ElectricityController());
           }),
         ),
+
         // GetPage(
         //   name: organizationFilterPage,
         //   page: () => const OrganizationFilterScreen(),
@@ -73,13 +80,6 @@ class AppRoutes {
         //     Get.put(OrganizationController());
         //   }),
         // ),
-        GetPage(
-          name: searchProduct,
-          page: () => const SearchProductScreen(),
-          binding: BindingsBuilder(() {
-            Get.put(ProductController());
-          }),
-        ),
 
         GetPage(
           name: settings,

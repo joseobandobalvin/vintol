@@ -18,17 +18,17 @@ class _MenuDrawerState extends State<MenuDrawer> {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              image: DecorationImage(
-                image: AssetImage('assets/images/splash_logo_dark.png'),
-                fit: BoxFit.fitHeight,
-              ),
-            ),
+            // decoration: BoxDecoration(
+            //   color: Colors.white,
+            //   // image: DecorationImage(
+            //   //   image: AssetImage('assets/images/splash_logo_dark.png'),
+            //   //   fit: BoxFit.fitHeight,
+            //   // ),
+            // ),
             child: SizedBox(
               height: double.maxFinite,
               child: Center(
-                child: Text(""),
+                child: Text("Menu"),
               ),
             ),
           ),
@@ -42,18 +42,26 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             dense: true,
-            leading: const Icon(Icons.settings),
-            title: const Text('Configuración'),
-            onTap: () {
-              Get.offAllNamed("/settings");
-            },
-          ),
-          ListTile(
-            dense: true,
             leading: const Icon(Icons.bluetooth_drive),
             title: const Text('Bluetooth'),
             onTap: () {
               Get.offAllNamed("/ble-screen");
+            },
+          ),
+          ListTile(
+            dense: true,
+            leading: const Icon(Icons.electric_bolt),
+            title: const Text('Electricidad'),
+            onTap: () {
+              Get.offAllNamed("/electricity-screen");
+            },
+          ),
+          ListTile(
+            dense: true,
+            leading: const Icon(Icons.settings),
+            title: const Text('Configuración'),
+            onTap: () {
+              Get.offAllNamed("/settings");
             },
           ),
         ],

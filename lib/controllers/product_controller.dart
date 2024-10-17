@@ -72,9 +72,7 @@ class ProductController extends GetxController {
 
   Future<int> submit(bool isNew) async {
     Product p = Product(
-      name: name.isNotEmpty
-          ? name.trim().toUpperCase()
-          : S.current.txtDefaulProductName.toUpperCase(),
+      name: name.isNotEmpty ? name.trim().toUpperCase() : "----",
       description: description.trim().toUpperCase(),
       price: price,
       quantity: quantity,

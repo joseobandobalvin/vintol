@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:vintol/models/ble.dart';
+import 'package:vintol/models/device_info.dart';
 import 'package:vintol/screens/ble/widget/ble_card.dart';
 
 class ListBluetoothLowEnergy extends StatelessWidget {
-  final List<Ble> listBle;
+  final List<DeviceInfo> listBle;
   const ListBluetoothLowEnergy(this.listBle, {super.key});
 
   @override

@@ -137,6 +137,18 @@ abstract class Dialogs {
               data.advertisementData.manufacturerData.toString(),
               textAlign: TextAlign.justify,
             ),
+            const SizedBox(height: 2),
+            const Text(
+              "Services :",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Text(
+              data.advertisementData.serviceData.toString(),
+              textAlign: TextAlign.justify,
+            ),
           ],
         ),
         actions: [

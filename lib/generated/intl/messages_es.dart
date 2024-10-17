@@ -44,22 +44,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "pageNotificationsCount": m3,
         "txBle": MessageLookupByLibrary.simpleMessage("Bluetooth"),
         "txClose": MessageLookupByLibrary.simpleMessage("Cerrar"),
-        "txDescription": MessageLookupByLibrary.simpleMessage("Descripción"),
+        "txElec": MessageLookupByLibrary.simpleMessage("Electricidad"),
         "txError": MessageLookupByLibrary.simpleMessage("Error"),
         "txErrorDescription": MessageLookupByLibrary.simpleMessage(
             "No se pudo guardar el registro"),
-        "txHome": MessageLookupByLibrary.simpleMessage("Herramientas"),
-        "txName": MessageLookupByLibrary.simpleMessage("Nombre"),
-        "txPrice": MessageLookupByLibrary.simpleMessage("Precio"),
-        "txQuantity": MessageLookupByLibrary.simpleMessage("Cantidad"),
-        "txtAcademicFormation":
-            MessageLookupByLibrary.simpleMessage("Formación académica"),
-        "txtAditionalInformation":
-            MessageLookupByLibrary.simpleMessage("Información adicional"),
+        "txHome": MessageLookupByLibrary.simpleMessage("Infracciones"),
         "txtAskDeleteAction": MessageLookupByLibrary.simpleMessage(
             "Seguro desea eliminar registro ?"),
-        "txtBasicInformation":
-            MessageLookupByLibrary.simpleMessage("Información básica"),
         "txtCancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "txtDatabaseBackUp":
             MessageLookupByLibrary.simpleMessage("Copia de seguridad"),
@@ -67,8 +58,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Eliminar base de datos"),
         "txtDatabaseRestore": MessageLookupByLibrary.simpleMessage(
             "Restaurar copia de seguridad"),
-        "txtDefaulProductName":
-            MessageLookupByLibrary.simpleMessage("Producto genérico"),
         "txtDefaultDescription":
             MessageLookupByLibrary.simpleMessage("Descripcion por defecto"),
         "txtDefaultTitle":
@@ -78,20 +67,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "txtDetail": MessageLookupByLibrary.simpleMessage("Detalle"),
         "txtEdit": MessageLookupByLibrary.simpleMessage("Editar"),
         "txtFilterBy": MessageLookupByLibrary.simpleMessage("Filtrar por :"),
-        "txtListOfJudgments":
-            MessageLookupByLibrary.simpleMessage("Relacion de sentencias"),
         "txtNew": MessageLookupByLibrary.simpleMessage("Nuevo"),
         "txtOk": MessageLookupByLibrary.simpleMessage("OK"),
-        "txtPartialPosition":
-            MessageLookupByLibrary.simpleMessage("Trayectoria partidaria"),
-        "txtProducts": MessageLookupByLibrary.simpleMessage("Productos"),
         "txtSave": MessageLookupByLibrary.simpleMessage("Guardar"),
         "txtSettings": MessageLookupByLibrary.simpleMessage("Configuración"),
         "txtSignIn": MessageLookupByLibrary.simpleMessage("Ingresar"),
-        "txtSwornDeclaration":
-            MessageLookupByLibrary.simpleMessage("Declaración jurada"),
-        "txtWorkExperience":
-            MessageLookupByLibrary.simpleMessage("Experiencia laboral"),
         "urlPhotoResume": MessageLookupByLibrary.simpleMessage(
             "https://declara.jne.gob.pe/Assets/Fotos-HojaVida"),
         "urlPoliticalGroupSymbol": MessageLookupByLibrary.simpleMessage(
