@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:vintol/configs/themes/app_colors.dart';
 import 'package:vintol/generated/l10n.dart';
+import 'package:vintol/screens/emapa/widgets/emapa_search_form.dart';
 import 'package:vintol/widgets/menu_drawer.dart';
 
-class ElectricityScreen extends StatefulWidget {
-  const ElectricityScreen({super.key});
+class EmapacopsaScreen extends StatefulWidget {
+  const EmapacopsaScreen({super.key});
 
   @override
-  State<ElectricityScreen> createState() => _ElectricityScreenState();
+  State<EmapacopsaScreen> createState() => _EmapacopsaScreenState();
 }
 
-class _ElectricityScreenState extends State<ElectricityScreen> {
+class _EmapacopsaScreenState extends State<EmapacopsaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,7 @@ class _ElectricityScreenState extends State<ElectricityScreen> {
             backgroundColor: kDarkBlue,
 
             title: Text(
-              S.current.txElec,
+              S.current.txEmapa,
               style: const TextStyle(color: Colors.white),
             ),
             //pinned: false,
@@ -46,19 +47,8 @@ class _ElectricityScreenState extends State<ElectricityScreen> {
               height: 10.0,
             ),
           ),
-          SliverGrid.extent(
-            maxCrossAxisExtent: 200,
-            mainAxisSpacing: 10.0,
-            crossAxisSpacing: 10.0,
-            childAspectRatio: 2.0,
-            children: <Widget>[
-              Container(color: Colors.pink),
-              Container(color: Colors.indigo),
-              Container(color: Colors.orange),
-              Container(color: Colors.pink),
-              Container(color: Colors.indigo),
-              Container(color: Colors.orange),
-            ],
+          SliverToBoxAdapter(
+            child: EmapaSearchForm(),
           ),
         ],
       ),

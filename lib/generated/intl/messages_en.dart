@@ -36,22 +36,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "baseUrl":
-            MessageLookupByLibrary.simpleMessage("https://full.facturalo.pro"),
+        "baseEmapacopsaUrl": MessageLookupByLibrary.simpleMessage(
+            "http://190.116.57.170:8087/facturacion"),
         "pageHomeWelcome": m0,
         "pageHomeWelcomeGender": m1,
         "pageHomeWelcomeRole": m2,
         "pageNotificationsCount": m3,
         "txBle": MessageLookupByLibrary.simpleMessage("Bluetooth"),
+        "txCancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "txClose": MessageLookupByLibrary.simpleMessage("Close"),
+        "txDelete": MessageLookupByLibrary.simpleMessage("Delete"),
+        "txDelete2": MessageLookupByLibrary.simpleMessage("Delete"),
+        "txDetail": MessageLookupByLibrary.simpleMessage("Detail"),
+        "txEdit": MessageLookupByLibrary.simpleMessage("Edit"),
         "txElec": MessageLookupByLibrary.simpleMessage("Electricity"),
+        "txEmapa": MessageLookupByLibrary.simpleMessage("EMAPACOP SA"),
         "txError": MessageLookupByLibrary.simpleMessage("Error"),
         "txErrorDescription": MessageLookupByLibrary.simpleMessage(
             "The record could not be saved."),
         "txHome": MessageLookupByLibrary.simpleMessage("Infractions"),
+        "txNew": MessageLookupByLibrary.simpleMessage("New"),
+        "txOk": MessageLookupByLibrary.simpleMessage("OK"),
+        "txSave": MessageLookupByLibrary.simpleMessage("Save"),
+        "txSearch": MessageLookupByLibrary.simpleMessage("Buscar"),
         "txtAskDeleteAction": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete a record ?"),
-        "txtCancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "txtDatabaseBackUp":
             MessageLookupByLibrary.simpleMessage("Backup Copy"),
         "txtDatabaseDelete":
@@ -62,14 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Default Description"),
         "txtDefaultTitle":
             MessageLookupByLibrary.simpleMessage("Default Title"),
-        "txtDelete": MessageLookupByLibrary.simpleMessage("Delete"),
-        "txtDelete2": MessageLookupByLibrary.simpleMessage("Delete"),
-        "txtDetail": MessageLookupByLibrary.simpleMessage("Detail"),
-        "txtEdit": MessageLookupByLibrary.simpleMessage("Edit"),
         "txtFilterBy": MessageLookupByLibrary.simpleMessage("Filter by :"),
-        "txtNew": MessageLookupByLibrary.simpleMessage("New"),
-        "txtOk": MessageLookupByLibrary.simpleMessage("OK"),
-        "txtSave": MessageLookupByLibrary.simpleMessage("Save"),
         "txtSettings": MessageLookupByLibrary.simpleMessage("Settings"),
         "txtSignIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "urlPhotoResume": MessageLookupByLibrary.simpleMessage(

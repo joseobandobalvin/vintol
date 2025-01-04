@@ -1,28 +1,28 @@
 {
-    "baseUrl":"https://full.facturalo.pro",
+    "baseEmapacopsaUrl":"http://190.116.57.170:8087/facturacion",
     
     "txHome":"Infracciones",
     "txBle":"Bluetooth",
     "txElec":"Electricidad",
+    "txEmapa":"EMAPACOP SA",
       
     "txtAskDeleteAction":"Seguro desea eliminar registro ?",
     
     "txtDefaultTitle":"Titulo por defecto",
     "txtDefaultDescription":"Descripcion por defecto",
     
-    "txtCancel": "Cancelar",
+    "txCancel": "Cancelar",
     "txClose": "Cerrar",
-    "txtDelete": "Eliminar",
-    "txtDelete2": "Borrar",
-    "txtDetail": "Detalle",
-    "txtEdit": "Editar",
+    "txDelete": "Eliminar",
+    "txDelete2": "Borrar",
+    "txDetail": "Detalle",
+    "txEdit": "Editar",
     "txError": "Error",
     "txErrorDescription":"No se pudo guardar el registro",
-    "txtNew": "Nuevo",
-    "txtOk" : "OK",
-    "txtSave": "Guardar",
-
-     
+    "txNew": "Nuevo",
+    "txOk" : "OK",
+    "txSave": "Guardar",
+    "txSearch": "Buscar",     
 
     "txtSettings": "Configuración",
     "txtSignIn": "Ingresar",

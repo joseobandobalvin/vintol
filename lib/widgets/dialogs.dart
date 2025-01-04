@@ -272,7 +272,7 @@ abstract class Dialogs {
               : Text(S.current.txtDefaultDescription),
           actions: [
             CupertinoActionSheetAction(
-              child: Text(S.current.txtOk),
+              child: Text(S.current.txOk),
               onPressed: () {
                 Navigator.pop(_, true);
               },
@@ -282,7 +282,7 @@ abstract class Dialogs {
                 Navigator.pop(_, false);
               },
               isDestructiveAction: true,
-              child: Text(S.current.txtCancel),
+              child: Text(S.current.txCancel),
             )
           ],
         ),
@@ -311,7 +311,7 @@ abstract class Dialogs {
               ),
         actions: [
           TextButton(
-            child: Text(S.current.txtCancel),
+            child: Text(S.current.txCancel),
             onPressed: () => Navigator.pop(context, false),
           ),
           TextButton(
@@ -319,7 +319,7 @@ abstract class Dialogs {
               textStyle: Theme.of(context).textTheme.labelLarge,
             ),
             child: Text(
-              S.current.txtDelete,
+              S.current.txDelete,
               style: const TextStyle(color: Colors.red),
             ),
             onPressed: () {
@@ -378,7 +378,7 @@ abstract class Dialogs {
                 color: Colors.red,
               ),
               title: Text(
-                S.current.txtDelete,
+                S.current.txDelete,
                 style: const TextStyle(color: Colors.red),
               ),
               onTap: () {
@@ -387,7 +387,7 @@ abstract class Dialogs {
             ),
             ListTile(
               leading: const Icon(Icons.cancel),
-              title: Text(S.current.txtCancel),
+              title: Text(S.current.txCancel),
               onTap: () {
                 Navigator.pop(_, false);
               },

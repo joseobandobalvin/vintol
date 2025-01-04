@@ -50,11 +50,11 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `https://full.facturalo.pro`
-  String get baseUrl {
+  /// `http://190.116.57.170:8087/facturacion`
+  String get baseEmapacopsaUrl {
     return Intl.message(
-      'https://full.facturalo.pro',
-      name: 'baseUrl',
+      'http://190.116.57.170:8087/facturacion',
+      name: 'baseEmapacopsaUrl',
       desc: '',
       args: [],
     );
@@ -85,6 +85,16 @@ class S {
     return Intl.message(
       'Electricity',
       name: 'txElec',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EMAPACOP SA`
+  String get txEmapa {
+    return Intl.message(
+      'EMAPACOP SA',
+      name: 'txEmapa',
       desc: '',
       args: [],
     );
@@ -121,10 +131,10 @@ class S {
   }
 
   /// `Cancel`
-  String get txtCancel {
+  String get txCancel {
     return Intl.message(
       'Cancel',
-      name: 'txtCancel',
+      name: 'txCancel',
       desc: '',
       args: [],
     );
@@ -141,40 +151,40 @@ class S {
   }
 
   /// `Delete`
-  String get txtDelete {
+  String get txDelete {
     return Intl.message(
       'Delete',
-      name: 'txtDelete',
+      name: 'txDelete',
       desc: '',
       args: [],
     );
   }
 
   /// `Delete`
-  String get txtDelete2 {
+  String get txDelete2 {
     return Intl.message(
       'Delete',
-      name: 'txtDelete2',
+      name: 'txDelete2',
       desc: '',
       args: [],
     );
   }
 
   /// `Detail`
-  String get txtDetail {
+  String get txDetail {
     return Intl.message(
       'Detail',
-      name: 'txtDetail',
+      name: 'txDetail',
       desc: '',
       args: [],
     );
   }
 
   /// `Edit`
-  String get txtEdit {
+  String get txEdit {
     return Intl.message(
       'Edit',
-      name: 'txtEdit',
+      name: 'txEdit',
       desc: '',
       args: [],
     );
@@ -201,30 +211,40 @@ class S {
   }
 
   /// `New`
-  String get txtNew {
+  String get txNew {
     return Intl.message(
       'New',
-      name: 'txtNew',
+      name: 'txNew',
       desc: '',
       args: [],
     );
   }
 
   /// `OK`
-  String get txtOk {
+  String get txOk {
     return Intl.message(
       'OK',
-      name: 'txtOk',
+      name: 'txOk',
       desc: '',
       args: [],
     );
   }
 
   /// `Save`
-  String get txtSave {
+  String get txSave {
     return Intl.message(
       'Save',
-      name: 'txtSave',
+      name: 'txSave',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buscar`
+  String get txSearch {
+    return Intl.message(
+      'Buscar',
+      name: 'txSearch',
       desc: '',
       args: [],
     );

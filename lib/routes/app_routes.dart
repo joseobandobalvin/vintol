@@ -1,5 +1,6 @@
 import 'package:vintol/controllers/ble_controller.dart';
 import 'package:vintol/controllers/electricity_controller.dart';
+import 'package:vintol/controllers/emapacopsa_controller.dart';
 import 'package:vintol/controllers/home_controller.dart';
 import 'package:vintol/controllers/infraction_controller.dart';
 import 'package:vintol/controllers/settings_controller.dart';
@@ -7,6 +8,7 @@ import 'package:vintol/screens/ble/ble_detail.dart';
 import 'package:vintol/screens/ble/ble_scan.dart';
 import 'package:vintol/screens/ble/ble_screen.dart';
 import 'package:vintol/screens/electricity/electricity_screen.dart';
+import 'package:vintol/screens/emapa/emapa_screen.dart';
 import 'package:vintol/screens/home/home_detail_screen.dart';
 import 'package:vintol/screens/home/home_screen.dart';
 import 'package:vintol/screens/settings/settings_screen.dart';
@@ -22,6 +24,8 @@ class AppRoutes {
   static const String bleDetail = "/ble-detail";
 
   static const String electricityScreen = "/electricity-screen";
+
+  static const String emapacopsaScreen = "/emapacopsa-screen";
 
   static const String settings = "/settings";
 
@@ -70,6 +74,14 @@ class AppRoutes {
           page: () => const ElectricityScreen(),
           binding: BindingsBuilder(() {
             Get.put(ElectricityController());
+          }),
+        ),
+        //Emapacopsa screen *****************************************
+        GetPage(
+          name: emapacopsaScreen,
+          page: () => const EmapacopsaScreen(),
+          binding: BindingsBuilder(() {
+            Get.put(EmapacopsaController());
           }),
         ),
 

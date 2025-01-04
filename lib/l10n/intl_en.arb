@@ -1,28 +1,28 @@
 {
-    "baseUrl":"https://full.facturalo.pro",
+    "baseEmapacopsaUrl":"http://190.116.57.170:8087/facturacion",
 
     "txHome":"Infractions",
     "txBle":"Bluetooth",
     "txElec":"Electricity",
+    "txEmapa":"EMAPACOP SA",
     
     "txtAskDeleteAction":"Are you sure you want to delete a record ?",
     
     "txtDefaultTitle":"Default Title",
     "txtDefaultDescription":"Default Description",
     
-    "txtCancel": "Cancel",
+    "txCancel": "Cancel",
     "txClose": "Close",
-    "txtDelete": "Delete",
-    "txtDelete2": "Delete",
-    "txtDetail": "Detail",
-    "txtEdit": "Edit",
+    "txDelete": "Delete",
+    "txDelete2": "Delete",
+    "txDetail": "Detail",
+    "txEdit": "Edit",
     "txError": "Error",
     "txErrorDescription":"The record could not be saved.",
-    "txtNew": "New",
-    "txtOk" : "OK",
-    "txtSave": "Save",
-
-   
+    "txNew": "New",
+    "txOk" : "OK",
+    "txSave": "Save",
+    "txSearch": "Buscar",       
 
     "txtSettings": "Settings",
     "txtSignIn": "Sign in",

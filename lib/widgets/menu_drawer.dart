@@ -58,6 +58,14 @@ class _MenuDrawerState extends State<MenuDrawer> {
           ),
           ListTile(
             dense: true,
+            leading: const Icon(Icons.electric_bolt),
+            title: const Text('Recibos EMAPACOP SA'),
+            onTap: () {
+              Get.offAllNamed("/emapacopsa-screen");
+            },
+          ),
+          ListTile(
+            dense: true,
             leading: const Icon(Icons.settings),
             title: const Text('Configuración'),
             onTap: () {

@@ -47,11 +47,7 @@ class InfractionController extends GetxController {
 
       if (res != null) {
         infractions = List.from(res);
-        // print(res.runtimeType);
-        // for (var e in lista) {
-        //   final Infraction infraction = Infraction.fromMap(e);
-        //   infractions.add(infraction);
-        // }
+
         return infractions;
       }
     } on PlatformException catch (e) {

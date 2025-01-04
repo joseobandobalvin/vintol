@@ -12,13 +12,14 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.8
   flutter:
-    sdk: flutter  
+    sdk: flutter
   flutter_blue_plus: ^1.32.12
   flutter_blue_plus_windows: ^1.24.1
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.4.1
-  flutter_slidable: ^3.1.1  
+  flutter_slidable: ^3.1.1
+  flutter_widget_from_html: ^0.15.2
   get: ^4.6.6
   google_fonts: ^6.2.1
   http: ^1.2.2

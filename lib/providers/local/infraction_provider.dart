@@ -1,11 +1,8 @@
 import 'package:sqflite/sqflite.dart';
-import 'package:vintol/helpers/http.dart';
-import 'package:vintol/helpers/http_method.dart';
 import 'package:vintol/models/infraction.dart';
 import 'package:vintol/providers/local/database_provider.dart';
 
 class InfractionProvider {
-  final Http _http = Http();
   static final DatabaseProvider db = DatabaseProvider.db;
 
   // Future getAllCandidates() async {
@@ -41,11 +38,8 @@ class InfractionProvider {
             where: 'falta LIKE ?',
             whereArgs: ['%' + query + '%']);
 
-        print(res);
-
         return res.map((te) => Infraction.fromMap(te)).toList();
       } catch (e) {
-        print(e);
         print(
             "error sin manejadores en flutter providerGetAllInfractionsByFalta----");
         return null;

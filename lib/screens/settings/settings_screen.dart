@@ -78,7 +78,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     title: Text(S.current.txtDatabaseDelete),
                     onTap: () async {
                       bool res = await Dialogs.confirmAndroid(context,
-                          title: S.current.txtDelete.toUpperCase(),
+                          title: S.current.txDelete.toUpperCase(),
                           description: S.current.txtAskDeleteAction);
 
                       if (res) {

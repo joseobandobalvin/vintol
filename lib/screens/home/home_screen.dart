@@ -26,8 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
 
     // Listar infracciones de la BD
-    //infractions = DatabaseProvider.db.getInfractions();
-    infractions = DatabaseProvider.db.getDataExample();
+    infractions = DatabaseProvider.db.getInfractions();
+    //infractions = DatabaseProvider.db.getDataExample();
   }
 
   @override

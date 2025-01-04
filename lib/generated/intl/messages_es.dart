@@ -36,22 +36,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "baseUrl":
-            MessageLookupByLibrary.simpleMessage("https://full.facturalo.pro"),
+        "baseEmapacopsaUrl": MessageLookupByLibrary.simpleMessage(
+            "http://190.116.57.170:8087/facturacion"),
         "pageHomeWelcome": m0,
         "pageHomeWelcomeGender": m1,
         "pageHomeWelcomeRole": m2,
         "pageNotificationsCount": m3,
         "txBle": MessageLookupByLibrary.simpleMessage("Bluetooth"),
+        "txCancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "txClose": MessageLookupByLibrary.simpleMessage("Cerrar"),
+        "txDelete": MessageLookupByLibrary.simpleMessage("Eliminar"),
+        "txDelete2": MessageLookupByLibrary.simpleMessage("Borrar"),
+        "txDetail": MessageLookupByLibrary.simpleMessage("Detalle"),
+        "txEdit": MessageLookupByLibrary.simpleMessage("Editar"),
         "txElec": MessageLookupByLibrary.simpleMessage("Electricidad"),
+        "txEmapa": MessageLookupByLibrary.simpleMessage("EMAPACOP SA"),
         "txError": MessageLookupByLibrary.simpleMessage("Error"),
         "txErrorDescription": MessageLookupByLibrary.simpleMessage(
             "No se pudo guardar el registro"),
         "txHome": MessageLookupByLibrary.simpleMessage("Infracciones"),
+        "txNew": MessageLookupByLibrary.simpleMessage("Nuevo"),
+        "txOk": MessageLookupByLibrary.simpleMessage("OK"),
+        "txSave": MessageLookupByLibrary.simpleMessage("Guardar"),
+        "txSearch": MessageLookupByLibrary.simpleMessage("Buscar"),
         "txtAskDeleteAction": MessageLookupByLibrary.simpleMessage(
             "Seguro desea eliminar registro ?"),
-        "txtCancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "txtDatabaseBackUp":
             MessageLookupByLibrary.simpleMessage("Copia de seguridad"),
         "txtDatabaseDelete":
@@ -62,14 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Descripcion por defecto"),
         "txtDefaultTitle":
             MessageLookupByLibrary.simpleMessage("Titulo por defecto"),
-        "txtDelete": MessageLookupByLibrary.simpleMessage("Eliminar"),
-        "txtDelete2": MessageLookupByLibrary.simpleMessage("Borrar"),
-        "txtDetail": MessageLookupByLibrary.simpleMessage("Detalle"),
-        "txtEdit": MessageLookupByLibrary.simpleMessage("Editar"),
         "txtFilterBy": MessageLookupByLibrary.simpleMessage("Filtrar por :"),
-        "txtNew": MessageLookupByLibrary.simpleMessage("Nuevo"),
-        "txtOk": MessageLookupByLibrary.simpleMessage("OK"),
-        "txtSave": MessageLookupByLibrary.simpleMessage("Guardar"),
         "txtSettings": MessageLookupByLibrary.simpleMessage("Configuración"),
         "txtSignIn": MessageLookupByLibrary.simpleMessage("Ingresar"),
         "urlPhotoResume": MessageLookupByLibrary.simpleMessage(
